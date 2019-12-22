@@ -3,22 +3,21 @@
 # !!!   DO NOT MODIFY THIS FILE BY YOURSELF   !!!
 # -----------------------------------------------
 
+input CreateRecipeInput {
+  title: String!
+  description: String
+}
+
 """Date custom scalar type"""
 scalar Date
 
 type Mutation {
-  addRecipe(newRecipeData: NewRecipeInput!): Recipe!
-  removeRecipe(id: String!): Boolean!
-}
-
-input NewRecipeInput {
-  title: String!
-  description: String
-  ingredients: [String!]!
+  addRecipe(input: CreateRecipeInput!): Recipe!
+  removeRecipe(id: Float!): Boolean!
 }
 
 type Query {
-  recipe(id: String!): Recipe!
+  recipe(id: Float!): Recipe!
   recipes(skip: Int = 0, take: Int = 25): [Recipe!]!
 }
 
