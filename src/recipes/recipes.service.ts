@@ -1,29 +1,34 @@
 import { Injectable } from "@nestjs/common";
-import { NewRecipeInput } from "./dto/new-recipe.input";
+import { InjectRepository } from "@nestjs/typeorm";
+import { Repository } from "typeorm";
+
+import { CreateRecipeInput } from "./dto/create.recipe.input";
 import { RecipesArgs } from "./dto/recipes.args";
 import { Recipe } from "./model/recipe.entity";
 
 @Injectable()
 export class RecipesService {
-  /**
-   * MOCK
-   * Put some real business logic here
-   * Left for demonstration purposes
-   */
+  constructor(
+    @InjectRepository(Recipe)
+    private readonly recipeRepository: Repository<Recipe>,
+  ) {}
 
-  async create(data: NewRecipeInput): Promise<Recipe> {
-    return {} as any;
+  async create(input: CreateRecipeInput): Promise<Recipe> {
+    const recipe = this.recipeRepository.create(input);
+    return this.recipeRepository.save(recipe);
   }
 
-  async findOneById(id: string): Promise<Recipe> {
-    return {} as any;
+  async findOneByIds(ids: number[]): Promise<Recipe[]> {
+    return this.recipeRepository.findByIds(ids);
   }
 
   async findAll(recipesArgs: RecipesArgs): Promise<Recipe[]> {
-    return [] as Recipe[];
+    const { skip, take } = recipesArgs;
+    return this.recipeRepository.find({ skip, take });
   }
 
-  async remove(id: string): Promise<boolean> {
+  async remove(id: number): Promise<boolean> {
+    this.recipeRepository.delete(id);
     return true;
   }
 }
