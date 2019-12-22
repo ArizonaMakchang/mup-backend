@@ -2,7 +2,7 @@
   "name": "mup-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jinhokong/mup-backend.git"
@@ -14,14 +14,11 @@
   },
   "homepage": "https://github.com/jinhokong/mup-backend#readme",
   "scripts": {
-    "prebuild": "rimraf dist",
     "build": "nest build",
-    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
-    "start:prod": "node dist/main",
-    "lint": "eslint -p tsconfig.json -c tslint.json",
+    "start:prod": "node dist/index",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
