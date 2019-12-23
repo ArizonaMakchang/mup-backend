@@ -5,14 +5,14 @@
   "main": "dist/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jinhokong/mup-backend.git"
+    "url": "git+https://github.com/ArizonaMakchang/mup-backend.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jinhokong/mup-backend/issues"
+    "url": "https://github.com/ArizonaMakchang/mup-backend/issues"
   },
-  "homepage": "https://github.com/jinhokong/mup-backend#readme",
+  "homepage": "https://github.com/ArizonaMakchang/mup-backend#readme",
   "scripts": {
     "build": "nest build",
     "start": "nest start",
