@@ -5,7 +5,7 @@ import { Field, InputType } from "type-graphql";
 export class CreateRecipeInput {
   @Field()
   @MaxLength(30)
-  title: string;
+  title!: string;
 
   @Field({ nullable: true })
   @IsOptional()
