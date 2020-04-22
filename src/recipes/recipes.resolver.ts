@@ -2,7 +2,7 @@ import { NotFoundException } from "@nestjs/common";
 import { Args, Mutation, Query, Resolver } from "@nestjs/graphql";
 import { CreateRecipeInput } from "./dto/create.recipe.input";
 import { RecipesArgs } from "./dto/recipes.args";
-import { Recipe } from "./model/recipe.entity";
+import { Recipe } from "./recipe.entity";
 import { RecipesService } from "./recipes.service";
 
 @Resolver(() => Recipe)

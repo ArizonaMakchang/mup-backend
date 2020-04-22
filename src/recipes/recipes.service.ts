@@ -4,7 +4,7 @@ import { Repository } from "typeorm";
 
 import { CreateRecipeInput } from "./dto/create.recipe.input";
 import { RecipesArgs } from "./dto/recipes.args";
-import { Recipe } from "./model/recipe.entity";
+import { Recipe } from "./recipe.entity";
 
 @Injectable()
 export class RecipesService {
